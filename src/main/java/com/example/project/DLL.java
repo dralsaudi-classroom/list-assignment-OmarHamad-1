@@ -75,5 +75,26 @@ public class DLL<T> {
         // is: public void removeBetween(T e1, T e2).
         // Example 3.1. Given the list: A ↔ B ↔ C ↔ D ↔ E ↔ F, removeBetween(’B’,
         // ’E’) results in: A ↔ B ↔ E ↔ F.
+	DLLNode<T> b1,b2;
+	    b1=null; b2=null;
+	current = head;
+	while(current!=null){
+		
+	if(current.data.equals(e1))
+	   b1=current;
+		
+	if(current.data.equals(e2))
+	   b2=current;
+
+	current=current.next;
+	}
+	    
+	if(b1!=null && b2!=null){
+		b1.next=b2;
+		b2.previous=b1;
+		current=head;
+	}
+	    else
+		return;
     }
 }
